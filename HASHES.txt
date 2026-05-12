@@ -1,0 +1,6 @@
+# Polyglot File Hashes
+MD5:    9b57d0e04519082d6be5e2aba1281b5b
+SHA1:   e47b1e7394b04fbfbd4462fc263ab6114b731393
+SHA256: 70e1b9c9ba4bc03f092f0d9cf4d4015a6b11df1eba957cf0e01721e1c50263ce
+Size:   1308 bytes
+Date:   2026-05-12
