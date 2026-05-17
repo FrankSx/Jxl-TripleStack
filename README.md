@@ -65,30 +65,6 @@ All three files are **identical bytes** — just renamed.
 
 ---
 
-## Architecture
-
-```mermaid
-graph TD
-    A[PDF 2.0 Document<br/>1,308 bytes] -->|EmbeddedFile Stream<br/>FlateDecode compressed| B[JPEG XL ISOBMFF<br/>246 bytes]
-    B -->|xml box<br/>XML comment| C[WebAssembly v1<br/>144 bytes]
-
-    A --> A1[%PDF-2.0 header]
-    A --> A2[Catalog → Pages → Page]
-    A --> A3[EmbeddedFiles Name Tree]
-    A --> A4[FileSpec: polyglot.jxl]
-    A --> A5[Cross-reference table]
-
-    B --> B1[ftyp box<br/>jxl brand]
-    B --> B2[jxlc box<br/>FF 0A signature]
-    B --> B3[xml box<br/>&lt;!-- WASM --&gt;]
-    B --> B4[jxll box<br/>Level 5]
-
-    C --> C1[Type: () → i32]
-    C --> C2[Export: polyglot]
-    C --> C3[Code: return 0xCAFEBABE]
-    C --> C4[Custom: polyglot-meta]
-```
-
 ### Layer 1 — PDF 2.0 (The Wrapper)
 - Valid `%PDF-2.0` header at offset 0
 - Standard object graph: Catalog → Pages → Page → Content
